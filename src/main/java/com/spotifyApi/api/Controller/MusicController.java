@@ -87,7 +87,6 @@ public class MusicController {
 			return ResponseEntity.notFound().build();
 		}
 		
-		musicRepository.save(music);
 		return ResponseEntity.ok(musicService.atualizarParcial(musicId, music));
 	}
 }
