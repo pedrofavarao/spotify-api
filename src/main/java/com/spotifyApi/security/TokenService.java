@@ -17,7 +17,7 @@ import com.spotifyApi.domain.model.User;
 @Service
 public class TokenService {
 	
-	@Value("spotifysecretjwt")
+	@Value("${jwt.secret}")
 	private String secret;
 	
     public String generateToken(UserDto user) {
