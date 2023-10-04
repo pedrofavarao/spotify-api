@@ -10,7 +10,7 @@ services:
     networks:
       - springApi-network
 
-  spring-api:
+  spring-app:
     build: .
     environment:
       - DB_HOST=mysqldb
