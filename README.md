@@ -7,7 +7,7 @@ Repository for the Spotify-API.
 
 - [Docker](https://docs.docker.com/install/)
 - [Docker-Compose](https://docs.docker.com/compose/install/linux/)
-- Java 19
+- [Java 17 or later](https://jdk.java.net/17/)
 
 ### How to run
 
