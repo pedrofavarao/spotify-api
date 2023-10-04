@@ -11,15 +11,15 @@ Repository for the Spotify-API.
 ### How to run
 
 1. Clone the repository
-2. Run at the root of the project $ mvn clean package
-3. Run $ docker-compose up -d in the root project
+2. Run at the root of the project "$ mvn clean package"
+3. Run "$ docker-compose up -d" in the root project
 4. Access the application at http://localhost:8090/
 
 
 ### Technologies
 
 - [Docker](https://www.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
+- [Docker-Compose](https://docs.docker.com/compose/)
 - [MySQL](https://www.mysql.com/)
 - [Java](https://www.java.com/pt_BR/)
 - [Spring Boot](https://spring.io/projects/spring-boot)
