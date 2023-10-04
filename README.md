@@ -5,36 +5,39 @@ Repository for the Spotify-API.
 
 ### Dependencies
 
-- Docker
+- [Docker](https://docs.docker.com/install/)
+- [Docker-Compose](https://docs.docker.com/compose/install/linux/)
 - Java 19
 
 ### How to run
 
 1. Clone the repository
-2. Create database: docker run -e MYSQL_ROOT_PASSWORD=123456 --name mysql-api -d -p 3309:3306 mysql:latest
-3. Run project in Boot Dashboard
-4. Access the application at http://localhost:8081/
+2. Run at the root of the project $ mvn clean package
+3. Run $ docker-compose up -d in the root project
+4. Access the application at http://localhost:8090/
 
 
 ### Technologies
 
-- Docker
-- MySQL
-- Java
-- Spring Boot
-- Springboot Libraries
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [MySQL](https://www.mysql.com/)
+- [Java](https://www.java.com/pt_BR/)
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Insomnia](https://insomnia.rest/)
 
-- Lombok
-- Maven
-- Flyway
-- SpringSecurity
-- SpringData
-- SpringValidation
-- Insomnia
+### Springboot Libraries
+- [Lombok](https://projectlombok.org/)
+- [Maven](https://maven.apache.org/)
+- [Flyway](https://flywaydb.org/)
+- [SpringSecurity](https://spring.io/projects/spring-security)
+- [SpringData](https://spring.io/projects/spring-data)
+- [SpringValidation](https://spring.io/guides/gs/validating-form-input/)
+
 
 ### Contributors
 
-- Pedro Lorencini
+- [Pedro Lorencini](https://www.linkedin.com/in/pedrofavarao/)
 
 ### Http Requests
 
