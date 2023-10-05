@@ -6,13 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spotifyApi.domain.model.User;
 import com.spotifyApi.domain.repository.UserRepository;
+import com.spotifyApi.domain.service.UserService;
 
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
 @RestController
@@ -22,6 +27,8 @@ public class UserController {
 	
 	@Autowired
 	private UserRepository userRepository;
+	@Autowired
+	private UserService userService;
 	
 	@GetMapping
 	public List<User> listar(){
@@ -40,5 +47,24 @@ public class UserController {
 		if(!userRepository.existsById(userId)) return ResponseEntity.notFound().build();
 		userRepository.deleteById(userId);
 		return ResponseEntity.noContent().build();
+	}
+
+	@PutMapping("/{userId}")
+	public ResponseEntity<User> atualizar(@Valid @PathVariable Long userId,@RequestBody User user){
+		if(!userRepository.existsById(userId)) {
+			return ResponseEntity.notFound().build();
+		}
+		user.setId(userId);
+		user = userService.save(user);
+		return ResponseEntity.ok(user);
+	}
+	
+	@PatchMapping("/{userId}")
+	public ResponseEntity<User> atualizarParcial(@Valid @PathVariable Long userId,@RequestBody User user){
+		
+		if(!userRepository.existsById(userId)) {
+			return ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.ok(userService.atualizarParcial(userId, user));
 	}
 }

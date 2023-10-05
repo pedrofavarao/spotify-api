@@ -21,33 +21,33 @@ public class MusicService{
 	}
 	
 	public Music atualizarParcial(Long musicId, Music music) {
-		Music musicTemp = musicRepository.findById(musicId).orElse(null);
+		Music musicInDatabase = musicRepository.findById(musicId).get();
 		
-		if(music.getTrackName() != null) musicTemp.setTrackName(music.getTrackName());
-		if(music.getArtistName() != null) musicTemp.setArtistName(music.getArtistName());
-		if(music.getArtistCount() != null) musicTemp.setArtistCount(music.getArtistCount());
-		if(music.getReleasedYear() != null) musicTemp.setReleasedYear(music.getReleasedYear());
-		if(music.getReleasedMonth() != null) musicTemp.setReleasedMonth(music.getReleasedMonth());
-		if(music.getReleasedDay() != null) musicTemp.setReleasedDay(music.getReleasedDay());
-		if(music.getInSpotifyPlaylists() != null) musicTemp.setInSpotifyPlaylists(music.getInSpotifyPlaylists());
-		if(music.getInSpotifyCharts() != null) musicTemp.setInSpotifyCharts(music.getInSpotifyCharts());
-		if(music.getStreams() != null) musicTemp.setStreams(music.getStreams());
-		if(music.getInApplePlaylists() != null) musicTemp.setInApplePlaylists(music.getInApplePlaylists());
-		if(music.getInAppleCharts() != null) musicTemp.setInAppleCharts(music.getInAppleCharts());
-		if(music.getInDeezerPlaylists() != null) musicTemp.setInDeezerPlaylists(music.getInDeezerPlaylists());
-		if(music.getInDeezerCharts() != null) musicTemp.setInDeezerCharts(music.getInDeezerCharts());
-		if(music.getInShazamCharts() != null) musicTemp.setInShazamCharts(music.getInShazamCharts());
-		if(music.getBpm() != null) musicTemp.setBpm(music.getBpm());
-		if(music.getKey() != null) musicTemp.setKey(music.getKey());
-		if(music.getMode() != null) musicTemp.setMode(music.getMode());
-		if(music.getDanceability() != null) musicTemp.setDanceability(music.getDanceability());
-		if(music.getValence() != null) musicTemp.setValence(music.getValence());
-		if(music.getEnergy() != null) musicTemp.setEnergy(music.getEnergy());
-		if(music.getAcousticness() != null) musicTemp.setAcousticness(music.getAcousticness());
-		if(music.getInstrumentalness() != null) musicTemp.setInstrumentalness(music.getInstrumentalness());
-		if(music.getLiveness() != null) musicTemp.setLiveness(music.getLiveness());
-		if(music.getSpeechiness() != null) musicTemp.setSpeechiness(music.getSpeechiness());
+		if(music.getTrackName() != null) musicInDatabase.setTrackName(music.getTrackName());
+		if(music.getArtistName() != null) musicInDatabase.setArtistName(music.getArtistName());
+		if(music.getArtistCount() != null) musicInDatabase.setArtistCount(music.getArtistCount());
+		if(music.getReleasedYear() != null) musicInDatabase.setReleasedYear(music.getReleasedYear());
+		if(music.getReleasedMonth() != null) musicInDatabase.setReleasedMonth(music.getReleasedMonth());
+		if(music.getReleasedDay() != null) musicInDatabase.setReleasedDay(music.getReleasedDay());
+		if(music.getInSpotifyPlaylists() != null) musicInDatabase.setInSpotifyPlaylists(music.getInSpotifyPlaylists());
+		if(music.getInSpotifyCharts() != null) musicInDatabase.setInSpotifyCharts(music.getInSpotifyCharts());
+		if(music.getStreams() != null) musicInDatabase.setStreams(music.getStreams());
+		if(music.getInApplePlaylists() != null) musicInDatabase.setInApplePlaylists(music.getInApplePlaylists());
+		if(music.getInAppleCharts() != null) musicInDatabase.setInAppleCharts(music.getInAppleCharts());
+		if(music.getInDeezerPlaylists() != null) musicInDatabase.setInDeezerPlaylists(music.getInDeezerPlaylists());
+		if(music.getInDeezerCharts() != null) musicInDatabase.setInDeezerCharts(music.getInDeezerCharts());
+		if(music.getInShazamCharts() != null) musicInDatabase.setInShazamCharts(music.getInShazamCharts());
+		if(music.getBpm() != null) musicInDatabase.setBpm(music.getBpm());
+		if(music.getKey() != null) musicInDatabase.setKey(music.getKey());
+		if(music.getMode() != null) musicInDatabase.setMode(music.getMode());
+		if(music.getDanceability() != null) musicInDatabase.setDanceability(music.getDanceability());
+		if(music.getValence() != null) musicInDatabase.setValence(music.getValence());
+		if(music.getEnergy() != null) musicInDatabase.setEnergy(music.getEnergy());
+		if(music.getAcousticness() != null) musicInDatabase.setAcousticness(music.getAcousticness());
+		if(music.getInstrumentalness() != null) musicInDatabase.setInstrumentalness(music.getInstrumentalness());
+		if(music.getLiveness() != null) musicInDatabase.setLiveness(music.getLiveness());
+		if(music.getSpeechiness() != null) musicInDatabase.setSpeechiness(music.getSpeechiness());
 		
-		return musicRepository.save(musicTemp);
+		return this.save(musicInDatabase);
 	}
 }
