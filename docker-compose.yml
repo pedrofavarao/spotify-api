@@ -17,7 +17,7 @@ services:
     environment:
       - DB_HOST=mysqldb
     ports:
-      - "8090:8090"
+      - "2595:2595"
     networks:
       - springApi-network
     depends_on:

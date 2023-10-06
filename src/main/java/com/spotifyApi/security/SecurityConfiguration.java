@@ -39,7 +39,7 @@ public class SecurityConfiguration {
                 .requestMatchers(HttpMethod.GET, "/musics/**").permitAll()
                 .anyRequest().authenticated().and()
                 .addFilterBefore(this.securityFilter, UsernamePasswordAuthenticationFilter.class)
-				.cors().configurationSource(corsConfigurationSource()).and()
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .build();
 	}
 
