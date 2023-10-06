@@ -12,7 +12,7 @@ Repository for the Spotify-API.
 
 1. Clone the repository
 2. Run in the root folder "docker-compose up -d"
-3. Access the application at http://localhost:8090/
+3. Access the application at http://localhost:2595/
 
 
 ### Technologies
