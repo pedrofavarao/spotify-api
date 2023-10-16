@@ -1,25 +1,25 @@
 package com.spotifyApi.security;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
-
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.spotifyApi.domain.dto.UserDto;
 import com.spotifyApi.domain.model.User;
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 
 @Service
+@AllArgsConstructor
 public class TokenService {
-	
 	@Value("${jwt.secret}")
-	private String secret;
-	
+	private final String secret;
+
     public String generateToken(UserDto user) {
         return this.generateToken(user.id().toString(), user.name(), user.email());
     }
